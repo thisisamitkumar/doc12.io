@@ -1,0 +1,7 @@
+First of all please don’t change anything with is not mention in document or video. If you know the code flow and understand then make the changes.
+
+This error is coming when you change the package from AndroidManifest.xml file or change folder name. No need to change this it does not affect your app.
+
+Only you need to change applicationId on build.gradle file. And after the change must update your firebase file. applicationId is the unique application name form your app.
+
+https://help.infixsoft.com/wp-content/uploads/2019/11/image-9-1024x725.png

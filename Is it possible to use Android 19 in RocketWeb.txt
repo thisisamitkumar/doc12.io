@@ -1,0 +1,6 @@
+From the beginning, the RocketWeb was support from version 19 but due to some design and performance issue, we remove it. Please follow the below guideline to support again. And if you fetch any problem contact me.
+
+Goto your build.gradle file and change minSdkVersion version as 19
+Click on Sync Now button and wait until the build completes.
+
+https://help.infixsoft.com/wp-content/uploads/2019/09/image-19-1024x569.png

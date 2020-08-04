@@ -1,0 +1,26 @@
+My project is not built and show this error message:
+
+12:29 AM Gradle sync failed: startup failed:
+build file ‘C:\Users\hp\Documents\Source File\Rocket Web\build.gradle’: 29: only buildscript {} and other plugins {} script blocks are allowed before plugins {} blocks, no other statements are allowed
+See https://docs.gradle.org/5.1.1/userguide/plugins.html#sec:plugins_block for information on the plugins {} block
+@ line 29, column 1.
+plugins {
+^
+1 error
+(17 s 251 ms)
+
+It’s an android studio error your project is not built. Follow the below step to fix the error.
+
+Clear Cash and Rebuild:
+
+First of all Delete .idea and .gradle file
+
+https://help.infixsoft.com/wp-content/uploads/2019/08/image-5-1024x764.png
+
+Clear cash and restart project
+
+https://help.infixsoft.com/wp-content/uploads/2019/08/image-6-1024x695.png
+
+Hope after that your project is built success if not working then maybe your pc is not connected with internet or Android studio file cash is corrupted. If not solved yet then you can also try with Clean project after that Rebuild project.
+
+https://help.infixsoft.com/wp-content/uploads/2019/08/image-7-1024x589.png

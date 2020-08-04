@@ -1,0 +1,14 @@
+The share button is not working on Menu
+
+After buying from codecanyon, I configure the app properly and running successfully but the share button are showing only ‘share’ text.
+
+It’s a bug of RocketWeb version 1.3.3 or bellows please update this line of code to resolve the issue.
+
+R.string.menu_share -> UtilMethods.shareTheApp(mContext,
+        "Download "+ getString(R.string.app_name)+"" +
+                " app from play store. Click here: "+"" +
+                "https://play.google.com/store/apps/details?id="+packageName+"/")
+				
+				
+
+Image: https://help.infixsoft.com/wp-content/uploads/2019/12/image-8-1024x769.png

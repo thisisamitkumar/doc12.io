@@ -1,0 +1,18 @@
+It’s android studio default functionality, to remove the background edit ic_launcher.xml (anydpi-v26) and ic_launcher_round.xml (anydpi-v26) and set the background as “@color/transparent”.
+
+https://help.infixsoft.com/wp-content/uploads/2019/12/image-1-1024x711.png
+
+ic_launcher.xml (anydpi-v26):
+
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/transparent"/>
+    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+</adaptive-icon>
+ic_launcher_round.xml (anydpi-v26)
+
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/transparent"/>
+    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+</adaptive-icon>

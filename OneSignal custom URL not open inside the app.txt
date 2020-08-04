@@ -1,0 +1,6 @@
+After buy RocketWeb form CodeCanyon configure the app completly but the OneSignal custom URL not open inside the app.
+
+As per the documentation, first of all, you need to set URL and is_open_outside.
+
+https://help.infixsoft.com/wp-content/uploads/2019/12/image-3.png
+https://help.infixsoft.com/wp-content/uploads/2019/12/image-4-768x460.png

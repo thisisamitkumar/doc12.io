@@ -1,0 +1,35 @@
+After testing some device we found this problem and fixed it. Hope it will be solved after version 1.4
+
+And for now for your version here is the solution:
+
+Release this line of code on HomeActivity.xml
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/pull_to_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/layout_toolbar"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <WebView
+            android:id="@+id/web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:windowSoftInputMode="adjustResize"/>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+https://help.infixsoft.com/wp-content/uploads/2019/09/image-8-1024x667.png
+
+Now you got this error, remove this line frame_web_view.removeView(mWebviewPop)
+
+https://help.infixsoft.com/wp-content/uploads/2019/09/image-9-1024x639.png

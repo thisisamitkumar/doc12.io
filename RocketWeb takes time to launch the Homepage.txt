@@ -1,0 +1,135 @@
+This now bug some of our clients don’t want splash screen that’s why we add a new page. So resolved the issue you can bypass it.
+
+Step 1: Change the full code of SplashActivity.
+
+package infix.imrankst1221.codecanyon.ui.splash
+
+import android.content.Context
+import android.content.Intent
+import android.graphics.drawable.GradientDrawable
+import android.os.Bundle
+import android.os.Handler
+import androidx.core.content.ContextCompat
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.FirebaseApp
+import com.onesignal.OneSignal
+import infix.imrankst1221.codecanyon.R
+import infix.imrankst1221.codecanyon.setting.AppDataInstance
+import infix.imrankst1221.codecanyon.ui.home.HomeActivity
+import infix.imrankst1221.rocket.library.setting.ConfigureRocketWeb
+import infix.imrankst1221.rocket.library.setting.ThemeBaseActivity
+import infix.imrankst1221.rocket.library.utility.PreferenceUtils
+import infix.imrankst1221.rocket.library.utility.Constants
+import infix.imrankst1221.rocket.library.utility.UtilMethods
+import kotlinx.android.synthetic.main.activity_splash.*
+
+class SplashActivity :  AppCompatActivity()  {
+    private lateinit var mContext: Context
+    private lateinit var configureRocketWeb: ConfigureRocketWeb
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                or View.SYSTEM_UI_FLAG_LOW_PROFILE
+                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                or View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
+
+        setContentView(R.layout.activity_splash)
+        mContext = this
+
+        initSetup()
+
+        if (PreferenceUtils.getInstance().getBooleanValue(Constants.KEY_SPLASH_SCREEN_ACTIVE, true)) {
+            gotoHomeWithSplash()
+        }else{
+            gotoHomeWithOutSplash()
+        }
+    }
+
+    // init and configure
+    private fun initSetup() {
+        FirebaseApp.initializeApp(this)
+        AppDataInstance.getINSTANCE(mContext)
+        PreferenceUtils.getInstance().initPreferences(mContext)
+
+        configureRocketWeb = ConfigureRocketWeb(mContext)
+        configureRocketWeb.readConfigureData("rocket_web.io")
+
+        AppDataInstance.navigationMenus = configureRocketWeb.getMenuData("rocket_web.io")
+        PreferenceUtils.getInstance().editIntegerValue(Constants.KEY_COLOR_PRIMARY, R.color.colorPrimary)
+        PreferenceUtils.getInstance().editIntegerValue(Constants.KEY_COLOR_PRIMARY_DARK, R.color.colorPrimaryDark)
+
+        OneSignal.startInit(this)
+                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+    }
+
+    private fun gotoHomeWithSplash(){
+        layout_splash.visibility = View.VISIBLE
+
+        val gradientDrawable = GradientDrawable(
+                GradientDrawable.Orientation.TOP_BOTTOM,
+                intArrayOf(ContextCompat.getColor(mContext, UtilMethods.getThemePrimaryColor()),
+                        ContextCompat.getColor(mContext,UtilMethods.getThemePrimaryDarkColor())))
+        gradientDrawable.cornerRadius = 0f
+        view_background.background = gradientDrawable
+
+        if (PreferenceUtils.getInstance().getBooleanValue(Constants.KEY_FULL_SCREEN_ACTIVE, false)){
+            window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    or View.SYSTEM_UI_FLAG_LOW_PROFILE
+                    or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                    or View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
+        }
+
+        Handler().postDelayed({
+            val mainIntent = Intent(this, HomeActivity::class.java)
+            startActivity(mainIntent)
+            finish()
+        }, 3000)
+    }
+
+    private fun gotoHomeWithOutSplash(){
+        layout_splash.visibility = View.GONE
+        val mainIntent = Intent(this, HomeActivity::class.java)
+        startActivity(mainIntent)
+        finish()
+    }
+}
+
+
+
+https://help.infixsoft.com/wp-content/uploads/2019/11/image-5-1024x556.png
+
+Step 2: Update AndroidMenifest.xml
+
+<activity
+    android:name=".MainActivity"
+    android:hardwareAccelerated="true"/>
+<activity
+    android:name=".ui.splash.SplashActivity"
+    android:hardwareAccelerated="true"
+    android:label="@string/app_name">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity>
+
+
+https://help.infixsoft.com/wp-content/uploads/2019/11/image-6-1024x782.png
+
+After that add this line on your Style.xml and Style.xml (21).
+
+<item name="android:windowDisablePreview">true</item>
+
+https://help.infixsoft.com/wp-content/uploads/2019/12/image-1024x706.png
+
+If your app takes time to load then add this line on style.xml and style.xml(v21)
+
+https://help.infixsoft.com/wp-content/uploads/2019/12/image-2-1024x644.png

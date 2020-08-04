@@ -1,0 +1,5 @@
+First of all, here is the official guideline: https://documentation.onesignal.com/docs/customize-notification-icons#section-1-generate-icons
+
+For a small icon, you need to set some images on the different drawable folder (codecanyon -> src -> main -> res). If the folders are not available then you need to create and add image must be on ic_stat_onesignal_default.png in png format.
+
+https://help.infixsoft.com/wp-content/uploads/2019/11/image-2-1024x535.png

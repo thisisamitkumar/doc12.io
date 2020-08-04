@@ -1,0 +1,10 @@
+https://help.infixsoft.com/wp-content/uploads/2019/08/RocketWeb_issue1-1024x494.png
+
+After downloading I follow video and guidelines but get this error my app is not running.
+
+It’s not RocketWeb problem it’s Android studio problem. Android studio take some cases which maybe corrupted in your pc. 
+
+Because of its Android studio problem you are not the only one who fetch. *Please turn off instant run*. 
+File > Settings > Build,Execution,Deployment > Instant Run> Un-check(Enable Instant Run to hot swap code)
+
+Please read this for more information: https://stackoverflow.com/questions/42687607/application-installation-failed-in-android-studio

@@ -1,0 +1,153 @@
+I buy RocketWeb from codecanyon and setup completely but the site file upload is not working.
+
+If you are using 1.4 or above then just enable JS and from configure, page enable the file upload will solve your problem. and must test it on the real device.
+
+For RocketWeb version 1.3 or blow: first of all, during configuration must enable file upload and javascript (js) then replace this line of code on HomeActivitt.kt and must test it on the real device.
+
+Solution: Goto MainActivity.kt find initChromeClient() method and replace bellow upload code. Remember that the code needs to update start ‘{‘ to end ‘}’
+
+
+https://help.infixsoft.com/wp-content/uploads/2019/09/image-5-1024x640.png
+
+private fun initChromeClient() {
+    var mCustomView: View? = null
+    var mCustomViewCallback: WebChromeClient.CustomViewCallback? = null
+    var mOriginalOrientation: Int = 0
+    var mOriginalSystemUiVisibility: Int = 0
+
+    web_view.webChromeClient = object : WebChromeClient() {
+        override fun onShowFileChooser(
+                webView: WebView, filePathCallback: ValueCallback<Array<Uri>>,
+                fileChooserParams: FileChooserParams): Boolean {
+            if (checkPermission(PERMISSIONS_REQUEST_CAMERA, true) &&
+                    checkPermission(PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE, true)) {
+                if (PreferenceUtils.getInstance().getBooleanValue(Constants.KEY_FILE_UPLOAD_ENABLE, true)) {
+                    if (mFilePath != null) {
+                        mFilePath!!.onReceiveValue(null)
+                    }
+                    mFilePath = filePathCallback
+                    var takePictureIntent: Intent? = null
+
+                    if (PreferenceUtils.getInstance().getBooleanValue(Constants.KEY_PHOTO_UPLOAD_ENABLE, true)) {
+                        takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                        if (takePictureIntent.resolveActivity(this@HomeActivity.packageManager) != null) {
+                            var photoFile: File? = null
+                            try {
+                                photoFile = createImageFile()
+                                takePictureIntent.putExtra("PhotoPath", mFileCamMessage)
+                            } catch (ex: IOException) {
+                                Log.e(TAG, "Image file creation failed", ex)
+                            }
+
+                            if (photoFile != null) {
+                                mFileCamMessage = "file:" + photoFile.absolutePath
+                                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile))
+                            } else {
+                                takePictureIntent = null
+                            }
+                        }
+                    }
+                    val contentSelectionIntent = Intent(Intent.ACTION_GET_CONTENT)
+                    contentSelectionIntent.type = ASWV_F_TYPE
+                    if (PreferenceUtils.getInstance().getBooleanValue(Constants.KEY_CAMERA_PHOTO_UPLOAD_ENABLE, false)) {
+                        contentSelectionIntent.addCategory(Intent.CATEGORY_OPENABLE)
+                    }else if (PreferenceUtils.getInstance().getBooleanValue(Constants.KEY_MULTIPLE_FILE_UPLOAD_ENABLE, false)) {
+                        contentSelectionIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
+                    }else {
+                        contentSelectionIntent.putExtra(Intent.CATEGORY_OPENABLE, true)
+                    }
+
+                    val intentArray: Array<Intent?>
+                    if (takePictureIntent != null) {
+                        intentArray = arrayOf(takePictureIntent)
+                    } else {
+                        intentArray = arrayOfNulls(0)
+                    }
+
+                    val chooserIntent = Intent(Intent.ACTION_CHOOSER)
+                    chooserIntent.putExtra(Intent.EXTRA_INTENT, contentSelectionIntent)
+                    chooserIntent.putExtra(Intent.EXTRA_TITLE, getString(R.string.label_file_chooser))
+                    chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentArray)
+                    startActivityForResult(chooserIntent, FILE_CHOOSER)
+
+                    return true
+                } else {
+                    return false
+                }
+            }
+            return false
+        }
+
+        override fun onGeolocationPermissionsShowPrompt(origin: String, callback: GeolocationPermissions.Callback) {
+            if (Build.VERSION.SDK_INT < 23 || checkPermission(PERMISSIONS_REQUEST_LOCATION, true)) {
+                // location permissions were granted previously so auto-approve
+                callback.invoke(origin, true, false)
+            }
+        }
+
+        override fun onJsAlert(view: WebView?, url: String?, message: String?, result: JsResult?): Boolean {
+            return super.onJsAlert(view, url, message, result)
+        }
+
+        override fun onProgressChanged(view: WebView?, newProgress: Int) {
+            super.onProgressChanged(view, newProgress)
+            /**
+             * Set progress view
+             *
+             * progress.setProgress(newProgress);
+            if (newProgress == 100) {
+                progress.setProgress(0);
+            }**/
+        }
+
+        override fun onShowCustomView(paramView: View?, paramCustomViewCallback: CustomViewCallback) {
+            if (mCustomView != null) {
+                onHideCustomView()
+                return
+            }
+            mCustomView = paramView
+            mOriginalSystemUiVisibility = window.decorView.systemUiVisibility
+            mOriginalOrientation = requestedOrientation
+            mCustomViewCallback = paramCustomViewCallback
+            (window.decorView as FrameLayout).addView(mCustomView, FrameLayout.LayoutParams(-1, -1))
+            window.decorView.systemUiVisibility = 3846
+        }
+
+
+        override fun onHideCustomView() {
+            (window.decorView as FrameLayout).removeView(mCustomView)
+            mCustomView = null
+            window.decorView.systemUiVisibility = mOriginalSystemUiVisibility
+            requestedOrientation = mOriginalOrientation
+            mCustomViewCallback?.onCustomViewHidden()
+            mCustomViewCallback = null
+        }
+
+        override fun onPermissionRequest(request: PermissionRequest?) {
+            Log.d(TAG, "onJSPermissionRequest")
+
+            val mPermissionRequest: PermissionRequest? = request
+            for (request in request?.resources!!){
+                if (request == PermissionRequest.RESOURCE_VIDEO_CAPTURE){
+                    val alertDialogBuilder = AlertDialog.Builder(mContext)
+                            .setTitle("Allow Permission to camera")
+                            .setPositiveButton("Allow") { dialog, which ->
+                                dialog.dismiss()
+                                mPermissionRequest?.grant(arrayOf(PermissionRequest.RESOURCE_VIDEO_CAPTURE))
+                            }
+                            .setNegativeButton("Deny") { dialog, which ->
+                                dialog.dismiss()
+                                mPermissionRequest?.deny()
+                            }
+                    val alertDialog = alertDialogBuilder.create()
+                    alertDialog.show()
+                }
+            }
+        }
+
+        override fun onPermissionRequestCanceled(request: PermissionRequest?) {
+            super.onPermissionRequestCanceled(request)
+            Toast.makeText(mContext,"Permission Denied",Toast.LENGTH_SHORT).show()
+        }
+    }
+}

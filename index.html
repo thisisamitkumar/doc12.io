@@ -1,0 +1,628 @@
+<!doctype html>
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<title>RocketWeb - Android web app solution | WebToApp </title>
+
+	<meta name="description" content="">
+	<meta name="author" content="InfixSoft">
+	<meta name="copyright" content="InfixSoft">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2018-12-16T00:00:00+01:00">
+
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+
+
+
+	<script src="assets/js/jquery.js"></script>
+
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+	<style>
+	html, body{background-color:#FFFFFF;color:#383838;}
+	h1,h2,h3,h4,h5,h6{color:#383838;}
+	section table{background-color:#FFFFFF;}
+	::-moz-selection{background:#444444;color:#DDDDDD;}
+	::selection{background:#444444;color:#DDDDDD;}
+	a.brand{background-image:url(assets/images/image_2.png);}
+	a, a:hover, a:active{color:#0000FF;}
+	hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+	div.navbar-inner, .navbar .nav li ul{background:#DDDDDD;color:#222222;}
+	a.btn-navbar{background:#DDDDDD;color:#222222;}
+	.navbar .nav li a{color:#222222;text-shadow:1px 1px 0px #EEEEEE;}
+	.navbar .nav li a:hover, .navbar .nav li.active a{text-shadow:none;}
+	div.navbar-inner ul{}
+	.marketing-byline{color:#FFFFFF;}
+	.navbar .nav > li a{color:#444444;}
+	.navbar .nav > li a:hover, a.btn-navbar:hover{background:#444444;color:#DDDDDD;}
+	.navbar .nav .active > a, .navbar .nav .active > a:hover, a.btn-navbar:active{background-color:#444444;color:#DDDDDD;}
+	.navbar .nav li ul li a:hover{background:#444444;color:#DDDDDD;}
+	.navbar .nav li ul li a:active{background:#444444;color:#DDDDDD;}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088CC%, from(#DDDDDD), to(#0044CC));
+			  background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: linear-gradient(top, #0088CC, #0044CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+			  border-color: #0044CC #0044CC #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #0088CC #0088CC #bfbfbf;
+		  background-color: #0044CC;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ul{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ul a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ul a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ul a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+
+</head>
+<body class="documenter-project-rocketweb">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="index.html#documenter_cover">Start</a></li>
+			<li><a href="index.html#quick_start" title="Quick start">Quick start</a></li>
+			<!--li><a href="index.html#setup_process" title="Setup Process">Setup Process</a></li-->
+			<li><a href="index.html#setup" title="Setup">Setup</a></li>
+			<li><a href="index.html#customisation" title="Customisation">Customisation</a></li>
+			<li><a href="index.html#publish" title="Publish">Publish</a></li>
+			<li><a href="index.html#support" title="Support">Support</a></li>
+		</ul>
+
+		<div id="documenter_copyright">Copyright InfixSoft 2019<br>
+		made with the <a href="http://www.infixsoft.com">www.infixsoft.com</a>
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>RocketWeb</h1>
+	<h2>Android web app solution | WebToApp </h2>
+
+	<hr>
+	<ul>
+	<li>Created: 03/10/2018</li>
+	<li>Latest update: 09/19/2019</li>
+	<li>Version: RK_DOC_V1.3.1.3</li>
+	<li>RocketWeb Version: Source File V_1.3.3</li>
+	<li>By: InfixSoft</li>
+	<li><a href=""></a></li>
+	<li>E-mail: <a href="mailto:&#105;&#109;&#114;&#97;&#110;&#107;&#115;&#116;&#49;&#50;&#50;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#105;&#109;&#114;&#97;&#110;&#107;&#115;&#116;&#49;&#50;&#50;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></li>
+	<li>Fackbook: <a href="http://www.facebook.com/infixsoft">www.facebook.com/infixsoft</a></li>
+	<li>Website: <a href="http://www.infixsoft.com">www.infixsoft.com</a></li>
+	</ul>
+	<p>Thank you for purchasing my app. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form here. Thanks so much!</p>
+
+	<p>We are following CodeCanyon rules and regulation, so under this licenses you can only publish single product on play store. And you can't sell this source code anywhere. Please follow Standard Licenses: <a href="https://codecanyon.net/licenses/standard/">https://codecanyon.net/licenses/standard/</a></p>
+	<p style="Color: red;"><strong>So if you want to publish multiple app please get multiple licenses, otherwise your app will blocked after publishing.</strong></p>
+	<img src="assets/images/image_120.png" style="width: 800px; height: 540px;" alt="Video Preview"></a>
+
+	</section>
+<br/>	<br/>	<br/> <br/>	<br/>
+	<section id="quick_start">
+	<div class="page-header"><h3>Quick start</h3><hr class="notop"></div>
+<h2>
+	Quick Start Guide</h2>
+<p>
+	RocketWeb is a platform to make your website to awesome custom fill mobile app. To develop with RocketWeb you need to set up an Android studio and follow our below instruction. We also provided a complete video tutorial for your better understanding of the complete system. All configuration is controlled from the single file you need to select based on your requirement and build your product. After the final build, you can publish the signed APK into play store.</p>
+<p>
+	<strong>Requirements for RocketWeb</strong></p>
+<ul>
+	<li>
+		Android Studio 3+</li>
+	<li>
+		SDK 21+ (Recemented to use)</li>
+</ul>
+<p>
+	<strong>Android Studio Setup Process</strong></p>
+<ol>
+	<li>
+		Download Android Studio - <a href="https://developer.android.com/studio/">https://developer.android.com/studio/</a></li>
+	<li>
+		Install Android Studio - <a href="https://developer.android.com/studio/install">https://developer.android.com/studio/install</a></li>
+	<li>
+		After download setup Android Studio and Download SDK 28 and build version &ldquo;28.0.3&rdquo;</li>
+	<li>
+		Learn more about Android Studio - <a href="https://developer.android.com/studio/intro/">https://developer.android.com/studio/intro/</a></li>
+</ol>
+
+<p><strong>Youtube (RocketWeb – Setup Guide)</strong></p>
+<p><strong>Don't forget to subscribe for future updates.</strong></p>
+<a href="https://www.youtube.com/watch?v=NanbhXhwjNg&list=PLV18_kimg8Kw5ZWc7BK7KmPk1Yptcq-qu/" rel="nofollow">
+<img src="assets/images/image_121.png" style="width: 600px; height: 340px;" alt="Video Preview"></a>
+
+	<p><strong>Knowledgebase for support</strong></p>
+	<p>Goto RocketWeb support center:<a href="https://help.infixsoft.com/">https://help.infixsoft.com/</a>
+	<br>Using your Envato Purches code get the access.
+	<br>In case of you face any problem goto RocketWeb <strong>Knowledgebase</strong>. If you don't find you're required issue on the list then <strong>Open New Ticket</strong> form home. </p>
+	<p id="image_margin"><img alt="" src="assets/images/image_128.png" style="height: 380px; width: 600px;"></p>
+	<p style="margin-left: 200px;">Download configure file<br><br></p>
+
+	<p><strong>Find your Item purchase code form License Certificate</strong></p>
+	<p id="image_margin"><img alt="" src="assets/images/image_129.png" style="height: 380px; width: 600px;"></p>
+	<p style="margin-left: 200px;">Item purchase code<br><br></p>
+
+<!--Setup process-->
+</section>
+<!--section id="setup_process">
+	<div class="page-header"><h3>Setup Process</h3><hr class="notop"></div>
+	<ul>
+		<li>Getting started! - <a href="https://www.youtube.com/watch?v=_4f4JQXzS5A">link</a></li>
+	  <li>How to open project with Android Studio 3.1.4 - <a href="https://youtu.be/_4f4JQXzS5A?t=28">link</a></li>
+		<li>How to change app Name & App Info - <a href="https://youtu.be/_4f4JQXzS5A?t=102">link</a></li>
+		<li>How to set website URL - <a href="https://youtu.be/_4f4JQXzS5A?t=198">link</a></li>
+		<li>How to change or remove navigation bar or app toolbar style - <a href="https://youtu.be/_4f4JQXzS5A?t=297">link</a></li>
+		<li>How to choice or remove toolbar's left Button - <a href="https://youtu.be/_4f4JQXzS5A?t=408">link</a></li>
+		<li>How to choice or remove toolbar's right Button - <a href="https://youtu.be/_4f4JQXzS5A?t=483">link</a></li>
+		<li>How to change app theme and color - <a href="https://youtu.be/_4f4JQXzS5A?t=572">link</a></li>
+		<li>How to change app loader animation - <a href="https://youtu.be/_4f4JQXzS5A?t=622">link</a></li>
+		<li>How to set or disable ADMOB - <a href="https://youtu.be/_4f4JQXzS5A?t=680">link</a></li>
+		<li>How to change package name Video - <a href="https://youtu.be/_4f4JQXzS5A?t=758">link</a></li>
+		<li>How to change package app icon - <a href="https://youtu.be/_4f4JQXzS5A?t=788">link</a></li>
+		<li>How to publish APK - <a href="https://youtu.be/_4f4JQXzS5A?t=846">link</a></li>
+	</ul>
+</section-->
+
+<!-- setup project-->
+<section id="setup">
+	<div class="page-header"><h3>Setup</h3><hr class="notop"></div>
+
+<h2>Android Studio Setup Process</h2>
+<p>
+	To develop an app, you will need minimum Android studio version 3+ or latest. This project is built with SDK 27 and build version &ldquo;27.0.3&rdquo;. So, after installing the Android studio run it and open SDK manager to download build version and SDK tools. Most of the time Android Studio will automatically download the files if you fetch any problem then check this bellow setup.</p>
+
+<p id="image_margin"><img alt="" src="assets/images/image_9.png" style="height: 241px; width: 600px;"></p>
+<p style="margin-left: 200px;">Open SDK manager<br><br></p>
+
+<p id="image_margin"><img alt="" src="assets/images/image_10.png" style="width: 600px; height: 411px;"></p>
+<p style="margin-left: 200px;">Download SDK 27 upper from SDK tools</p>
+
+<p id="image_margin"><img alt="" src="assets/images/image_3.png" style="width: 600px; height: 408px;"></p>
+<p style="margin-left: 200px;">Download SDK tools</p>
+
+<p>	<strong>RocketWeb &ndash; Project Setup</strong></p>
+<p>After downloading the source file you get a zip folder name &ldquo;Rocket Web.zip&rdquo; unzip the folder. You found the android source code for Rocket web. Then open your android studio and click &ldquo;Open an existing Android Studio Project&rdquo; and select the project location folder. Or you can also open the project from <strong>Android S</strong><strong>tudio</strong><strong> &gt; File &gt; open</strong></p>
+<p>&nbsp;</p>
+<p style="margin-left: 40px;">
+	<img alt="" src="assets/images/image_7.png" style="width: 600px; height: 433px;"></p>
+<p style="margin-left: 280px;">
+	Open project</p>
+<p style="margin-left: 40px;">
+	<img src="assets/images/image_1.png" style="width: 600px; height: 381px;"></p>
+<p style="margin-left: 280px;">Select Rocket web Folder</p>
+
+<p>During opening Android studio make sure that your PC are connected with internet. If any problem you face 1st step is <strong>Invalidate caches and restart android studio</strong>. After that, if still not build success then find on RocketWeb knowledge base or search on Google because it's your Android Studio problem.</p>
+<p style="margin-left: 40px;">
+	<img src="assets/images/image_131.png" style="width: 600px; height: 381px;"></p>
+<p style="margin-left: 280px;">Clear caches</p>
+</section>
+
+<!--Customisation-->
+<section id="customisation">
+	<div class="page-header"><h3>Customisation</h3><hr class="notop"></div>
+<h2><strong>Project Customisation</strong></h2>
+
+<p><strong>Download configuration file</strong></p>
+<p>At first goto RocketWeb support center: <a href="https://help.infixsoft.com/">https://help.infixsoft.com/</a>
+	<br> From support center click on Configure & Setup then using your <strong>Envato Purchase Code</strong> login to configure page. </p>
+<p id="image_margin"><img alt="" src="assets/images/image_128.png" style="height: 380px; width: 600px;"></p>
+<p style="margin-left: 200px;">Download configure file<br><br></p>
+
+<p><strong>RocketWeb Configuration</strong></p>
+<p>After login to Configure & Setup, you found a form where configure your app as you want.</p>
+<p id="image_margin"><img alt="" src="assets/images/image_130.png" style="height: 650px; width: 600px;"></p>
+<p style="margin-left: 200px;">Download configure file<br><br></p>
+
+<p><strong>RocketWeb Configuration details</strong></p>
+<p><strong>1. Base URL</strong></p>
+<p>Set your full URL (Ex: http://www.infixsoft.com) with http or https. This URL will load on your app after start up screen.</p>
+
+<p><strong>02. Select navigation bar style</strong></p>
+<p>Four navigation style is available choice one of them. The title are of toolbar will show your app name.
+	<br>If you want to change it then from activity_home.xml (res > layout > activity_home.xml) inside this file you found TextView with id "txt_toolbar_title" change the text (ex: android:text="Your title") </p>
+<p><img alt="" src="assets/images/image_12.png" style="width: 470px; height: 200px;"></p>
+
+<p><strong>03. Select left button option</strong></p>
+<p>If you already select NAVIGATION_HIDE then this menu not working. Select your left navigation bar button. If you don't need just select LEFT_MENU_HIDE.</p>
+<p><img alt="" src="assets/images/image_18.png" style="width: 470px; height: 220px;"></p>
+
+<p><strong>04. Select right button option</strong></p>
+<p>If you already select NAVIGATION_HIDE then this menu not working. Select your right navigation bar button. If you don't need just select RIGHT_MENU_HIDE.</p>
+<p><img alt="" src="assets/images/image_116.png" style="width: 470px; height: 220px;"></p>
+
+<p><strong>05. Select your theme and color</strong></p>
+<p>Theme color is your app color, here is multiple colors available you can choice gradient and solid color. If you want to use your own color set then select THEME_PRIMARY and set the color from color.xml (res > values > colors) where "colorPrimary", "colorPrimaryDark" and "colorAccent" is your theme color..</p>
+<p>Solid color list</p>
+<p><img alt="" src="assets/images/image_132.png" style="width: 600px; height: 1520px;"></p>
+<p>Gradient color list</p>
+<p><img alt="" src="assets/images/image_133.png" style="width: 600px; height: 700px;"></p>
+
+<p><strong>06. Select loader style</strong></p>
+<p>During loading website, this loader will be shown you can select the loader from the given list. If your website already has a loader and if you don't want then select "LOADER_HIDE".</p>
+<table style="margin-left: 40px;">
+<thead>
+<tr>
+<th>Style</th>
+<th>Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOADER_ROTATING</td>
+<td><a target="_blank" rel="noopener noreferrer"><img src="assets/images/RotatingPlane.gif" alt="LOADER_ROTATING" width="90px" height="90px" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td style="gravi">DOUBLE_BOUNCE</td>
+<td><a target="_blank" rel="noopener noreferrer"><img src="assets/images/DoubleBounce.gif" alt="DOUBLE_BOUNCE" width="90px" height="90px" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td>LOADER_WAVE</td>
+<td><a target="_blank" rel="noopener noreferrer"><img src="assets/images/Wave.gif" alt="LOADER_WAVE" width="90px" height="90px" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td>LOADER_WANDERING_CUBE</td>
+<td><a target="_blank" rel="noopener noreferrer"><img src="assets/images/WanderingCubes.gif" alt="LOADER_WANDERING_CUBE" width="90px" height="90px" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td>LOADER_PULSE</td>
+<td><a target="_blank" rel="noopener noreferrer"><img src="assets/images/Pulse.gif" alt="LOADER_PULSE" width="90px" height="90px" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td>LOADER_CHASING_DOTS</td>
+<td><a target="_blank" rel="noopener noreferrer"><img src="assets/images/ChasingDots.gif" alt="LOADER_CHASING_DOTS" width="90px" height="90px" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td>LOADER_THREE_BOUNCE</td>
+<td><a target="_blank" rel="noopener noreferrer"><img src="assets/images/ThreeBounce.gif" alt="LOADER_THREE_BOUNCE" width="90px" height="90px" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td>LOADER_CIRCLE</td>
+<td><a target="_blank" rel="noopener noreferrer"><img src="assets/images/Circle.gif" alt="LOADER_CIRCLE" width="90px" height="90px" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td>LOADER_CUBE_GRID</td>
+<td><a target="_blank" rel="noopener noreferrer"><img src="assets/images/CubeGrid.gif" alt="LOADER_CUBE_GRID" width="90px" height="90px" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td>LOADER_FADING_CIRCLE</td>
+<td><a target="_blank" rel="noopener noreferrer"><img src="assets/images/FadingCircle.gif" alt="LOADER_FADING_CIRCLE" width="90px" height="90px" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td>LOADER_FOLDING_CUBE</td>
+<td><a target="_blank" rel="noopener noreferrer"><img src="assets/images/FoldingCube.gif" alt="LOADER_FOLDING_CUBE" width="90px" height="90px" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td>LOADER_ROTATING_CIRCLE</td>
+<td><a target="_blank" rel="noopener noreferrer"><img src="assets/images/RotatingCircle.gif" alt="LOADER_ROTATING_CIRCLE" width="90px" height="90px" style="max-width:100%;"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Thanks <strong>ybq</strong> for awesome github library.</p>
+
+<p><strong>07. Set your loader interval time in milliseconds</strong></p>
+<p>If you already selected "LOADER_HIDE" then no need this. By default, if your website loading complete the loader is gone. And the interval time is the maximum time for the loader. The input type is in milliseconds (Ex: 1000 milliseconds = 1 second).</p>
+
+<p><strong>08. Set your adMob ID</strong></p>
+<p>If you don't want to show google AdMob just keep it empty. If you want then set your AdMob ID here, remember that the ID containing this character (~). After that <strong>meta-data</strong> enable from AndroidManifest</p>
+
+<p><strong>09. Set adMob key ad banner</strong></p>
+<p>If you don't want to show google AdMob just keep it empty. Set your banner key here for AdMob banner ads.</p>
+
+<p><strong>10. Set adMob key ad interstitial</strong></p>
+<p>If you don't want to show google AdMob just keep it empty. Set your interstitial key here for AdMob interstitial ads.</p>
+
+<p><strong>11. Set adMob key ad rewarded</strong></p>
+<p>If you don't want to show google AdMob just keep it empty. Set your rewarded key here for AdMob rewarded ads.</p>
+
+<p><strong>12. Set adMob delay in milliseconds</strong></p>
+<p>If you don't want to show google AdMob just keep it empty. The delay is refresh time, after loading ads successfully or fatch any error this is the reload time. The input type is in milliseconds (Ex: 1000 milliseconds = 1 second).</p>
+
+<p><strong>13. Set file upload enable</strong></p>
+<p>If you don't know about it just keep it default selected value. This flag will enable file upload options.</p>
+
+<p><strong>14. Set photo upload enable</strong></p>
+<p>If you don't know about it just keep it default selected value. This flag will enable photo/image upload options. After that <strong>permssion (2)</strong> enable from AndroidManifest.</p>
+
+<p><strong>15. Set camera photo upload enable</strong></p>
+<p>If you don't know about it just keep it default selected value. This flag will enable take photo from camera options. After that <strong>permssion (2) & (4)</strong> enable from AndroidManifest</p>
+
+<p><strong>16. Set multiple file upload enable</strong></p>
+<p>If you don't know about it just keep it default selected value. This flag will enable file upload options. After that <strong>permssion (2)</strong> enable from AndroidManifest.</p>
+
+<p><strong>17. Set JavaScript active</strong></p>
+<p>If you don't know about it just keep it default selected value. This flag will enable JavaScript options. I recommended keep it always on except special situation.</p>
+
+<p><strong>18. Set downloads in webview active</strong></p>
+<p>If you don't know about it just keep it default selected value. This flag will enable download file inside of the app or outside of the app, some file type if make problem then keeps it off so that download outside the app. After that <strong>permssion (2)</strong> enable from AndroidManifest</p>
+
+<p><strong>19. Set permssion dialog active</strong></p>
+<p>This flag will enable user permission popup during start screen. If your app required permission then keep it on otherwise turn it off.</p>
+
+<p><strong>20. Set splash screen active</strong></p>
+<p>This flag will enable user permission popup during start screen. This flag will enable splash screen or startup screen. If you want to show it then only turn on.</p>
+
+<p><strong>21. Set swipe to refresh active</strong></p>
+<p>This flag will enable swap to reload the webview. Only if you want to swap to reload options then turn it on.</p>
+
+<p><strong>22. Set website zoom active</strong></p>
+<p>This flag will enable swap to reload the webview. If your website is a desktop version or needs the zoom button top of webview then enable it.</p>
+
+<p><strong>23. Set desktop mode active</strong></p>
+<p>This flag will enable swap to reload the webview. If you want to show your website on desktop mode then only active this option.</p>
+
+<p><strong>24. Set fullscreen active</strong></p>
+<p>This flag will enable swap to reload the webview. If you want to show on fullscreen then only active this option. For gaming website it's very helpfull.</p>
+
+<p><strong>25. Set menu name and menu url</strong></p>
+<p>From the menu you can load multiple URL, so provide menu name and corresponding URL for the menu. </br>
+- If you want the share button on the menu set "SHARE" as URL. </br> 
+- If you want to show about us then set "ABOUT" as URL and set the about text from string.xml (res > values > string.xml)  change "title_about_us". </br>
+- If you want to rate us button then set "RATE"  as URL.</br>
+- If you want to exit us button then set "EXIT"  as URL.</p>
+
+
+<p><strong>RocketWeb Configuration download and setup</strong></p>
+<p>After selecting all your customization your app configures almost done. After download, you got a file named "rocket_web.io". <strong>Please notice that do not rename the file. And for multiple time download if automatic change the name then set the mane  "rocket_web.io" again</strong>.
+<br> After that past the file under assets folder. </p>
+<p id="image_margin"><img alt="" src="assets/images/image_134.png" style="height: 430px; width: 650px;"></p>
+
+
+<p><strong>Set app colors</strong></p>
+<p>If you select color primary and want to set your own custom color then set your color HEX code here. </p>
+<p style="margin-left: 40px;"><img alt="" src="assets/images/image_6.png" style="width: 600px; height: 410px;"></p>
+
+<p><strong>Set app name &amp; other strings</strong></p>
+	To change app name title and other info edit string files. Open string.xml (res > values > string.xml) or press Shift twice and search string.xml</p>
+<ul>
+	<li>
+		&ldquo;<strong>app_name</strong>&rdquo; is your application name.</li>
+	<li>
+		&ldquo;<strong>splash_quote</strong>&rdquo; is splash message.</li>
+	<li>
+		&ldquo;<strong>title_user_email</strong>&rdquo; is about us email ID.</li>
+	<li>
+		&ldquo;<strong>title_user_website</strong>&rdquo; is about us website.</li>
+	<li>
+		&ldquo;<strong>Loading</strong>&rdquo; is loading message.</li>
+</ul>
+<p>
+	&nbsp;</p>
+<p style="margin-left: 40px;">
+	<img alt="" src="assets/images/image_4.png" style="width: 600px; height: 411px;"></p>
+<p style="margin-left: 260px;">Change app name&nbsp;</p>
+<p align="center">
+	&nbsp;</p>
+
+<p><strong>Set app icon</strong></p>
+<p>
+	Change your app icon from Image Asset. <strong>App &gt;</strong><strong>&nbsp;res &gt;</strong><strong>&nbsp;mipmap &gt;</strong><strong>&nbsp;ic_launcher.png</strong> is an app icon for the different screen you can change it. Or you can select the icon by selecting Image Asset, <strong>App &gt;</strong><strong>&nbsp;mouse right click &gt;</strong><strong>&nbsp;New &gt;</strong><strong>&nbsp;Image Asset&nbsp;</strong></p>
+<p>
+	&nbsp;</p>
+<p>
+	<img alt="" src="assets/images/image_5.png" style="width: 600px; height: 275px;"></p>
+<p style="margin-left: 240px;">Change the app logo</p>
+<p style="margin-left: 240px;">
+	&nbsp;</p>
+
+	<p>&nbsp;</p>
+	<p><strong>Set Splash image</strong></p>
+	<p>
+		Change app splash repressing the images with name <strong>&ldquo;ic_splash_image.png&rdquo;</strong>. Please notice the image name must be as same with existing name and .png format.</p>
+	<p>
+		<img alt="" src="assets/images/image_13.png" style="width: 750px; height: 450px;"></p>
+	<p style="margin-left: 240px;">Change splash image</p>
+
+	<p>
+		If you want to use fullscreen image in splash then repressing the images with name <strong>&ldquo;ic_splash_fullscreen.png.png&rdquo;</strong> and remote the line <strong>android:visibility="gone"</strong>. Please notice the image name must be as same with existing name and .png format.</p>
+	<p>
+		<img alt="" src="assets/images/image_119.png" style="width: 750px; height: 450px;"></p>
+	<p style="margin-left: 240px;">Change splash fullscreen image</p>
+
+	<p>
+		<strong>Connect with Google Firebase</strong></p>
+	<p>	RocketWeb has supported Google Firebase. To monitor your app users, AdMob earning and Push notification setup Google Firebase.
+		<br>If you don't want to use Firebase then you can disable from build.gradle file by removing <strong>'apply plugin: 'com.google.gms.google-services'</strong> line.
+		<br>If you want to use goto firebase consol <a href="https://console.firebase.google.com">https://console.firebase.google.com</a> and create the project with your application id. Then setup configuration file to RocketWeb. </a></p>
+
+	<p>
+		<strong><img alt="" src="assets/images/image_127.png" style="width: 600px; height: 280px;"></strong></p>
+	<p style="margin-left: 240px;">
+		Configure select Android and set your applicationId</p>
+	<p>&nbsp;</p>
+
+	<p>
+		<strong><img alt="" src="assets/images/image_117.png" style="width: 600px; height: 455px;"></strong></p>
+	<p style="margin-left: 240px;">
+		Configure google service</p>
+	<p>&nbsp;</p>
+
+	<p>
+		After that must need to enable from the manifest file, To enable remove comment line ("<.!-- " and "-->" )
+	</p>
+	<p>	<img alt="" src="assets/images/image_135.png" style="width: 600px; height: 293px;"></p> <br>
+
+
+	<p>
+		<strong>Google Cloud Messaging</strong></p>
+	<p>
+		Push notification is available with Google Cloud Messaging. After configuring firebase with your project compose notification and send to all devices. For learn more please visit: <a href="https://firebase.google.com/docs/cloud-messaging">https://firebase.google.com/docs/cloud-messaging &nbsp;</a></p>
+	<p>
+		<strong><img alt="" src="assets/images/image_118.png" style="width: 600px; height: 295px;"></strong></p>
+	<p style="margin-left: 240px;">
+		Send push notification</p>
+	<p>&nbsp;</p>
+
+
+	<p><strong>Onesignal Messaging</strong></p>
+	<p>Goto Onesignal website set Firebase service key and Firebase sender ID. After that get Onesignal App ID and set into AndroidManifest.xml.  For learn more please visit: <a href="https://onesignal.com/">https://onesignal.com &nbsp;</a></p>
+	<p>
+		<strong><img alt="" src="assets/images/image_123.png" style="width: 500px; height: 295px;"></strong></p>
+	<p style="margin-left: 240px;">
+		Set firebase keys</p>
+	<p>&nbsp;</p>
+
+	<p>
+		<strong><img alt="" src="assets/images/image_124.png" style="width: 500px; height: 295px;"></strong></p>
+	<p style="margin-left: 240px;">
+		Get onesignal app ID</p>
+	<p>&nbsp;</p>
+	
+	<p>If you want to open URL when click on notificaion then during send notification use the “url” key to set URL. By default, it’s open inside the app. If you want to open outside (external) of the app then use key “is_open_outside” as true.</p>
+	<p>
+		<strong><img alt="" src="assets/images/image_20.png" style="width: 500px; height: 295px;"></strong></p>
+	<p style="margin-left: 240px;">
+		Open URL ourside/inside app</p>
+	<p>&nbsp;</p>
+
+	<p>Set onesignal app ID and enable meta data, To enable remove comment line ("<.!-- " and "-->" )</p>
+	<p><strong><img alt="" src="assets/images/image_125.png" style="width: 600px; height: 400px;"></strong></p>
+	<p style="margin-left: 240px;">Enable onesignal from AndroidManifest</p>
+	<p>&nbsp;</p>
+
+	<p><strong><img alt="" src="assets/images/image_136.png" style="width: 600px; height: 400px;"></strong></p>
+	<p style="margin-left: 240px;">
+		Set onesignal app ID on Gradle</p>
+	<p>&nbsp;</p>
+
+	<p>
+		<strong>Google Adsense key setup</strong></p>
+	<p>
+		You can earn form showing <strong>AdMob</strong> ads. Just get your key form <strong>AdMob</strong> website <a href="https://apps.admob.com/v2/apps%20">https://apps.admob.com/v2/apps</a> and after that setup the configuration file. There are 3 types of adding available. For learn more please visit: <a href="https://developers.google.com/admob/android/quick-start">https://developers.google.com/admob/android/quick-start &nbsp;</a></p>
+	<p>	<strong><img alt="" src="assets/images/image_15.png" style="width: 600px; height: 295px;"></strong></p>
+
+	<p><strong>Enable user permission only if you need.</strong></p>
+	<p>If your app required user permission then enable it from AndroidMenifest, To enable remove comment line ("<.!-- " and "-->" )</p>
+  <ul>
+		1. Internet permission must be required it's already enabled.<br>
+		2. Required for storage, If your app cash is enabled to read/write anything then enable it.<br>
+		3. Required for Location get, If you app use location service then enable it.<br>
+		4. Required for the camera, If you need camera functionality then enable it.<br>
+		5. Required for maps, if you need the map function then only enable it.<br>
+		6. Required for visualizer & radio, if you need then only enable it.<br>
+		7. Required for notifications & radio, if you need then only enable it.<br>
+		8. Required for tumblr,  if you need then only enable it.<br>
+		9. Required for in-app purchases, if you need then only enable it.<br>
+	</ul>
+	<p>
+		<img alt="" src="assets/images/image_126.png" style="width: 750px; height: 500px;"></p>
+	<p style="margin-left: 240px;">Enable user permission</p>
+	<p>&nbsp;</p>
+</section>
+
+<section id="publish">
+<div class="page-header"><h3>Publish</h3><hr class="notop"></div>
+	<p><strong>Package Name Changing For Play Store</strong></p>
+	<p>
+		Every app has a unique applicationId for identify the app. And this is also use as play store url. To change edit <strong>Gradle Scripts &gt;</strong><strong>&nbsp;build.gradle</strong>&nbsp; or press Shift twice and search <strong>build.gradle</strong>. <strong>&ldquo;applicationId&rdquo; </strong>is your app id, to publish an app on app store you must need a unique package name. After change package name must be updae firebase file. And no need to change the folder name just change the package name from gradle.</p>
+	<p>	&nbsp;</p>
+
+	<p>
+		<strong><img alt="" src="assets/images/image_14.png" style="width: 750px; height: 250px;"></strong></p>
+	<p style="margin-left: 240px;">
+		Change application ID&nbsp;</p>
+	<p>&nbsp;</p>
+
+	<p style="Color: red;"><strong>After change Package Name must be update Firebase file. Also only change the "applicationId" do not change any folder name or anything else.</strong></p>
+
+	<p>
+		<strong>Clear cash and rebuild project: </strong></p>
+	<p>
+		After change package name clear your project cache and rebuilds project again, It's also helpfull when you fetch any build problem. So best practice is after complete configure clear cash and rebuild. From Android studio <strong>&nbsp;File > Invalidate cache/restart Android studio> Invalidate and restart.</strong></p>
+	<p>	&nbsp;</p>
+
+	<p>
+		<strong><img alt="" src="assets/images/image_122.png" style="width: 550px; height: 380px;"></strong></p>
+	<p style="margin-left: 240px;">
+		Invalidate cache/restart Android studio&nbsp;</p>
+	<p>&nbsp;</p>
+
+	<p>
+		<strong>Build an android app and publish</strong></p>
+	<p>
+		After renaming, build your project and check all functions. If all is ok, generate Signed APK: Click Build &gt; Generated Signed APK. Create your Key, set your password and build it!</p>
+	<p>
+		<strong><img alt="" src="assets/images/image_11.png" style="width: 600px; height: 232px;"></strong></p>
+	<p style="margin-left: 240px;">
+		Generate Signed APK</p>
+	<br>
+	<p>
+		<strong>Preparing to publish on Play Store</strong></p>
+	<p>
+		<br clear="ALL">
+		After setting up unique application ID now make a final build for play store. Go to <strong>Menu &gt;</strong><strong>&nbsp;Build &gt;</strong><strong>&nbsp;Generate signed APK &gt;</strong><strong>&nbsp;select module &gt;</strong><strong>&nbsp;Create new key Store</strong>, then provide your info and password for the key and select signature version for both. When you get the final build APK,
+		just upload the ﬁle in your Play Store (<a href="https://play.google.com/apps/publish/">https://play.google.com/apps/publish/</a>) Developer Account and you are good to go. If you don't have the account then google will taks $25 for lifetime just make payment and provide your information. </p>
+	<p>&nbsp;</p>
+
+	<p>
+		<img alt="" src="assets/images/image_111.png" style="width: 600px; height: 516px;"></p>
+	<p>
+		<p>Congress your mobile application develop complete! After build successfully, you can use the APK and publish it onto any app store. </p>
+		&nbsp;
+	</p>
+</section>
+
+
+<section id="support">
+<div class="page-header"><h3>Support</h3><hr class="notop"></div>
+<p>
+	<strong>What&#39;s Included With The Project Files</strong></p>
+<ul>
+	<li>
+		Source code in Kotlin language</li>
+	<li>
+		Complete setup guideline documentation</li>
+	<li>
+		Complete setup guideline video tutorial</li>
+</ul>
+<p>
+	<strong>License</strong></p>
+<ul>
+	<li>
+		This project is not providing any icon or logo for professional use.</li>
+	<li>
+		App publishing or any type of custom development is not included with it.</li>
+	<li>
+		All animation loader credential is deserved by github library- ybq/Android-SpinKit</li>
+	<li>
+		Project promotional websites, preview themes and preview icons are not included.</li>
+	<li>
+		This project is only for one app publish only and get support for that particular app.</li>
+	<li>
+		Under this project, we can&rsquo;t provide multiple product support.</li>
+</ul>
+<p>
+	<strong>Support Desk</strong></p>
+	Still, you having any questions? Just leave a comment. Or you need support from us? Just visit our Support Center.
+<p>E-mail ID: <a href="mailto:&#105;&#109;&#114;&#97;&#110;&#107;&#115;&#116;&#49;&#50;&#50;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#105;&#109;&#114;&#97;&#110;&#107;&#115;&#116;&#49;&#50;&#50;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>&nbsp;</p>
+<p>Website: <a href="https://help.infixsoft.com/">https://help.infixsoft.com/</a></p>
+<p>Facebook: <a href="http://www.facebook.com/infixsoft">www.facebook.com/infixsoft</a></p>
+<p>
+	YouTube: <a href="https://www.youtube.com/channel/UCz1M4tNjTK_SgCZwiP-zFJQ/</a></p>
+</section>
+
+	</div>
+</body>
+</html>
